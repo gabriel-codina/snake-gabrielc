@@ -1,17 +1,25 @@
+/*-----------------------------------------------------------------------------
+ * Variables
+ * ----------------------------------------------------------------------------
+ */
 var snake;
 var snakeLength;
 var snakeSize;
-
-
-
 var context;
 var screenWidth;
 var screenHeight;
-
+/*-----------------------------------------------------------------------------
+ * Function Callers- tell functions to activate.
+ * ----------------------------------------------------------------------------
+ */
 gameInitialize();
 snakeInitialize();
+foodInitialize();
 setInterval(gameLoop, 1000/30);
-
+/*-----------------------------------------------------------------------------
+ * Functions- tell website what to do and can be used whenever.(these are game ones)
+ * ----------------------------------------------------------------------------
+ */
 
 function gameInitialize(){
     var canvas = document.getElementById("game-screen");
@@ -22,18 +30,30 @@ function gameInitialize(){
     canvas.height = screenHeight;
    
 }
+/*-----------------------------------------------------------------------------
+ * Function Caller that repeats the calls.
+ * ----------------------------------------------------------------------------
+ */
 function gameLoop() {
     gameDraw();
     snakeUpdate();
     snakeDraw();
+    foodDraw();
 }
+/*-----------------------------------------------------------------------------
+ * Continuation of game Functions
+ * ----------------------------------------------------------------------------
+ */
 function gameDraw() {
     context.fillStyle = "rgb(26,46,145)";
     context.fillRect(0, 0, screenWidth, screenHeight);
     
     
 }
-
+/*-----------------------------------------------------------------------------
+ * snake Functions
+ * ----------------------------------------------------------------------------
+ */
 function snakeInitialize(){
     snake = [];
     snakeLength = 4;
@@ -57,11 +77,37 @@ function snakeDraw(){
     }
 }
 function snakeUpdate(){
-    var snakeHeadx = snake[0].x;
+    var snakeHeadX = snake[0].x;
     var snakeHeadY = snake[0].y;
     
+    snakeHeadX++;
+    
     var snakeTail = snake.pop();
-    snakeTail.x = snakeHeadx;
+    snakeTail.x = snakeHeadX;
     snakeTail.y = snakeHeadY;
     snake.unshift(snakeTail);
+    }
+    /*-------------------------------------------------------------------------
+     * Food Functions
+     * ------------------------------------------------------------------------
+     */
+    function foodInitialize(){
+        food = {
+            x: 0,
+            y: 0
+        };
+        setFoodPosition();                          
+    }
+    
+    function foodDraw(){
+        context.fillStyle = "white";
+        context.fillRect(food.x, food.y, snakeSize, snakeSize);
+    }
+    
+    function setFoodPosition(){
+        var RandomX = Math.floor(Math.random() * screenWidth);
+        var RandomY = Math.floor(Math.random() * screenHeight);
+        
+        food.x = RandomX;
+        food.y = RandomY;
     }
