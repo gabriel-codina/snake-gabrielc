@@ -5,6 +5,7 @@
 var snake;
 var snakeLength;
 var snakeSize;
+var snakeDirection;
 var context;
 var screenWidth;
 var screenHeight;
@@ -58,6 +59,7 @@ function snakeInitialize(){
     snake = [];
     snakeLength = 4;
     snakeSize = 40;
+    snakeDirection = "down";
     
     for (var index = snakeLength - 1; index >= 0; index--){
     snake.push({
@@ -80,7 +82,10 @@ function snakeUpdate(){
     var snakeHeadX = snake[0].x;
     var snakeHeadY = snake[0].y;
     
-    snakeHeadX++;
+    if(snakeDirection == "down") {
+        snakeHeadY++;
+    }
+    
     
     var snakeTail = snake.pop();
     snakeTail.x = snakeHeadX;
