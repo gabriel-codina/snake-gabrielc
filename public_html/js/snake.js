@@ -9,6 +9,7 @@ var snakeDirection;
 var context;
 var screenWidth;
 var screenHeight;
+
 /*-----------------------------------------------------------------------------
  * Function Callers- tell functions to activate.
  * ----------------------------------------------------------------------------
@@ -153,7 +154,20 @@ function snakeUpdate(){
         else if(event.keyCode == "40" && snakeDirection != "up") {
             snakeDirection = "down";
         }
-    }
+        
+        if(event.keyCode == "76" && event.keyCode == "79") {
+            console.log("L");
+            snake.push({
+                x: 0,
+                y: 0
+            });
+           snakeLength++;;
+            
+        }
+        
+        
+        }
+   
     /*-------------------------------------------------------------------------
      * Collision Handling
      * ------------------------------------------------------------------------
@@ -176,3 +190,4 @@ function snakeUpdate(){
             console.log("we made it");
         };
     }
+    
