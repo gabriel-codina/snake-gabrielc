@@ -24,6 +24,7 @@ setInterval(gameLoop, 100);
  */
 
 function gameInitialize(){
+    confirm('Click ok if you want to start');
     var canvas = document.getElementById("game-screen");
     context = canvas.getContext("2d");
     
@@ -155,15 +156,22 @@ function snakeUpdate(){
             snakeDirection = "down";
         }
         
-        if(event.keyCode == "76" && event.keyCode == "79") {
+        if(event.keyCode == "76") {
             console.log("L");
             snake.push({
                 x: 0,
                 y: 0
             });
            snakeLength++;;
+           confirm('you are using the lenght hack');
+        
             
         }
+        
+          
+        if(event.keyCode == "80") {
+            confirm('PAUSE');
+        }   
         
         
         }
