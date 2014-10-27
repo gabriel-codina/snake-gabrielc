@@ -104,7 +104,7 @@ function snakeUpdate(){
     
    checkFoodCollisions(snakeHeadX, snakeHeadY);
    checkWallCollisions(snakeHeadX, snakeHeadY);
-   
+   keyboardHandler(snakeHeadX, snakeHeadY);
     var snakeTail = snake.pop();
     snakeTail.x = snakeHeadX;
     snakeTail.y = snakeHeadY;
@@ -140,8 +140,8 @@ function snakeUpdate(){
      * ------------------------------------------------------------------------
      */
     
-    function keyboardHandler(event) {
-        console.log(event);
+    function keyboardHandler(event, snakeHeadX, snakeHeadY) {
+        
         
         if(event.keyCode == "39" && snakeDirection != "left") {
             snakeDirection = "right";
@@ -158,10 +158,13 @@ function snakeUpdate(){
         
         if(event.keyCode == "76") {
             console.log("L");
-            snake.push({
-                x: 0,
-                y: 0
-            });
+            var cheat = 25;
+            for (var index = cheat - 1; index >= 0; index--){
+    snake.push({
+        x: snakeHeadX,
+        y: snakeHeadY
+    });
+}
            snakeLength++;;
            confirm('you are using the lenght hack');
         
@@ -194,8 +197,18 @@ function snakeUpdate(){
     }
     
     function checkWallCollisions (snakeHeadX, snakeHeadY) {
-        if(snakeHeadX >= screenWidth || snakeHeadX * snakeSize < 0) {
-            console.log("we made it");
+        if(snakeHeadX * snakeSize >= screenWidth || snakeHeadX * snakeSize < 0 ||snakeHeadY * snakeSize >= screenHeight+3 || snakeHeadY * snakeSize < 0) {
+            console.log("Wall Collision");
+            confirm('You Dead');
+            restartGame();
+
         };
     }
     
+    function restartGame (){
+        gameInitialize();
+        snakeInitialize();
+foodInitialize();
+setInterval(gameLoop, 10000);
+checkWallCollisons(null);
+    }    
