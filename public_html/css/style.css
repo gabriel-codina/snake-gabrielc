@@ -142,6 +142,11 @@ canvas{
          margin: 0;
      }
      
+     #playHUD{
+         position: absolute;
+         visibility: hidden;
+     }
+     
 div {
     position: absolute;
     width: 300px;
@@ -154,6 +159,6 @@ div {
 /* Chrome, Safari, Opera */
 @-webkit-keyframes myfirst {
     0% {background: green;}
-    50%{background-image: url('http://svn.eduke32.com/polymer_hrp/highres/sprites/firstperson/muzzle_flash_01.png')}
-    100% {background-image: url('http://img4.wikia.nocookie.net/__cb20131230004241/wikinet/es/images/thumb/9/92/Nuclear_Explosion_2_by_Qsec.png/200px-Nuclear_Explosion_2_by_Qsec.png');}
+    50%{background-image: url('http://efod.se/media/blog/explosion1.png')}
+    100% {background-image: url("http://efod.se/media/blog/explosion1.png");}
 }

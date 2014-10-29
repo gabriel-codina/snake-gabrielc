@@ -14,6 +14,9 @@ var screenHeight;
 var gameState;
 var gameOverMenu;
 var gameStartMenu;
+var playHUD;
+
+var speed;
 /*-----------------------------------------------------------------------------
  * Function Callers- tell functions to activate.
  * ----------------------------------------------------------------------------
@@ -21,7 +24,7 @@ var gameStartMenu;
 gameInitialize();
 snakeInitialize();
 foodInitialize();
-setInterval(gameLoop, 35);
+
 /*-----------------------------------------------------------------------------
  * Functions- tell website what to do and can be used whenever.(these are game ones)
  * ----------------------------------------------------------------------------
@@ -49,7 +52,11 @@ function gameInitialize() {
     restartButton.addEventListener("click",gameRestart);
     hardButton.addEventListener("click",hardStart);
     
+    playHUD = document.getElementById("playHUD");
+    
     setState("gameStart");
+    
+    speed = 35;
 }
 /*-----------------------------------------------------------------------------
  * Function Caller that repeats the calls.
@@ -77,7 +84,7 @@ function gameDraw() {
 
 function gameRestart (){
  
- 
+ setInterval(gameLoop, 35);
  setState("gameStart");
  hideMenu(gameOverMenu);
  
@@ -113,8 +120,9 @@ function snakeInitialize() {
 
 function snakeDraw() {
     for (var index = 0; index < snake.length; index++) {
-        context.fillStyle = "black";
+        context.fillStyle = "black";    
         context.fillRect(snake[index].x * snakeSize, snake[index].y * snakeSize, snakeSize, snakeSize);
+      
     }
 }
 function snakeUpdate() {
