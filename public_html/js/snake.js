@@ -16,7 +16,12 @@ var gameOverMenu;
 var gameStartMenu;
 var playHUD;
 
+var scoreboard;
+
 var speed;
+var fast;
+var slow;
+var med;
 /*-----------------------------------------------------------------------------
  * Function Callers- tell functions to activate.
  * ----------------------------------------------------------------------------
@@ -24,7 +29,7 @@ var speed;
 gameInitialize();
 snakeInitialize();
 foodInitialize();
-
+var myspeed = setInterval(gameLoop, 35);
 /*-----------------------------------------------------------------------------
  * Functions- tell website what to do and can be used whenever.(these are game ones)
  * ----------------------------------------------------------------------------
@@ -45,16 +50,28 @@ function gameInitialize() {
     
     gameStartMenu = document.getElementById("gameStart");
     gameOverMenu = document.getElementById("gameOver");
+    opScreen = document.getElementById("opScreen");
     
  //   centerMenuPosition(gameOverMenu);
     
     document.getElementById("restartButton");
     restartButton.addEventListener("click",gameRestart);
+    
     hardButton.addEventListener("click",hardStart);
+    medButton.addEventListener("click",medStart);
+    easyButton.addEventListener("click",easyStart);
+    
+    wtcontrol.addEventListener("click",controls);
+    ruls.addEventListener("click",rules);
+    rezum.addEventListener("click",resume);
+    
+    
     
     playHUD = document.getElementById("playHUD");
+    scoreboard = document.getElementById("scoreboard");
+    gmscoreboard = document.getElementById("gmscoreboard");
     
-    setState("gameStart");
+    setState("opScreen");
     
     speed = 35;
 }
@@ -65,6 +82,7 @@ function gameInitialize() {
 
 function gameLoop() {
     gameDraw();
+    drawScoreboard();
     if (gameState == "PLAY") {
         snakeUpdate();
         snakeDraw();
@@ -84,17 +102,61 @@ function gameDraw() {
 
 function gameRestart (){
  
- setInterval(gameLoop, 35);
+
  setState("gameStart");
  hideMenu(gameOverMenu);
  
  }
  
  function hardStart(){
+     
      snakeInitialize();
  foodInitialize();
+ clearInterval(myspeed);
+ clearInterval(fast);
+ clearInterval(slow);
+ clearInterval(med);
+ fast = setInterval(gameLoop, 30);
  setState("PLAY");
  hideMenu(gameStartMenu);
+ }
+ 
+ function medStart(){
+     
+     snakeInitialize();
+ foodInitialize();
+ clearInterval(myspeed);
+ clearInterval(fast);
+ clearInterval(slow);
+ clearInterval(med);
+ med = setInterval(gameLoop, 55);
+ setState("PLAY");
+ hideMenu(gameStartMenu);
+ }
+ 
+ function easyStart(){
+     
+     snakeInitialize();
+ foodInitialize();
+ clearInterval(myspeed);
+ clearInterval(fast);
+ clearInterval(slow);
+ clearInterval(med);
+ slow = setInterval(gameLoop, 100);
+ setState("PLAY");
+ hideMenu(gameStartMenu);
+ }
+ 
+ function controls() {
+     confirm("you are in controls");
+ }
+ 
+ function rules() {
+     confirm("you are in rules");
+ }
+ 
+ function resume() {
+     confirm("you are in resume");
  }
 /*-----------------------------------------------------------------------------
  * snake Functions
@@ -217,7 +279,7 @@ function keyboardHandler(event, snakeHeadX, snakeHeadY) {
 
 
     if (event.keyCode == "80") {
-        confirm('PAUSE');
+        displayMenu(opScreen);
     }
 
 
@@ -282,16 +344,29 @@ function hideMenu(menu){
 function showMenu (state) {
     if(state == "gameOver") {
         displayMenu(gameOverMenu);
+        gmscoreboard.innerHTML = "Score:" + (snakeLength * 10 - 30);
+        hideMenu(playHUD);
+    }
+    else if(state == "PLAY"){
+        displayMenu(playHUD);
     }
     
     if(state == "gameStart") {
         displayMenu(gameStartMenu);
+    }
+    
+    if(state == "opScreen") {
+        displayMenu(opScreen);
     }
 }
 
 function centerMenuPosition(menu){
     menu.style.top = (screenHeight / 2) - (menu.offsetHeight / 2) + "px";
     menu.style.left = (screenWidth / 2) - (menu.offsetWidth / 2) + "px";
+}
+
+function drawScoreboard(){
+    scoreboard.innerHTML = "Score:" + (snakeLength * 10 - 30);
 }
 
 
