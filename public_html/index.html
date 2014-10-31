@@ -6,14 +6,14 @@ and open the template in the editor.
 -->
 <html>
     <head>
-        <title>TODO supply a title</title>
+        <title>Gabriel Codina - Snake</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" type="text/css" href="css/style.css">
-        
+        <link href='http://fonts.googleapis.com/css?family=Play' rel='stylesheet' type='text/css'>
     </head>
     <body>
-        <h1 class="snakez, h1">Snake</h1>
+        
         
         <section id='playHUD'>
             <h2 id='scoreboard'></h2>
@@ -26,9 +26,11 @@ and open the template in the editor.
         </section>
         <section id="gameStart">
             <h1 id="whocrs">Snake</h1>
-            <h5 id="easyButton">easy</h5>
-            <h5 id="medButton">medium</h5>
-            <h5 id="hardButton">hard</h5>
+            <h5 id="easyButton">Worm</h5>
+            <h5 id="medButton">Snake</h5>
+            <h5 id="hardButton">Python</h5>
+            <h5 id='controlstrt'>controls</h5>
+            <h5 id='rulestrt'>rules</h5>
         </section>
         
         <section id="opScreen">
@@ -37,11 +39,27 @@ and open the template in the editor.
             <h5 id='rezum'>resume</h5>
         </section>
         
+        <section id="rulScreen">
+            <p class='darules'>1. Don't touch the walls.</p>
+            <p class='darules'>2. Don't hit your own Snake.</p>
+            <p class='darules'>3. Get as much food as you can.</p>
+            <h5 id='backop'>Back</h5>
+        </section>
+        
+        <section id="conScreen">
+            <p class='darult'>p = pause</p>
+            <p class='darult'>right arrow key = right</p>
+            <p class='darult'>left arrow key = left</p>
+            <p class='darult'>down arrow key = down</p>
+            <p class='darult'>up arrow key = up</p>
+            <h5 id='backcon'>Back</h5>
+        </section>
+        
         <canvas id="game-screen"></canvas>
         
         <script src="js/snake.js"></script>
         
-       	
+       	<marquee direction="right">This Website was created by <a href="http://localhost:8383/codinag-prortfolio-v2/index.html">Gabriel-Codina</a></marquee>
 	<embed 
             class="mus"
 	src="Martin Garrix - Animals Remix.mp3"

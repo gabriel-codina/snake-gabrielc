@@ -4,14 +4,19 @@ body{
     background-color: green;
 }
 
+p{
+    font-size: 30px;
+    font-style: oblique;
+}
+
 #game-screen{
     display: block;
 }
 
 canvas{
-    width: 800px;
-   padding-top: 0px;
-   
+    width: 1200px;
+    padding-top: 40px;
+
     margin: 0 auto;
 }
 
@@ -23,56 +28,57 @@ canvas{
 }
 
 .mus{
-         margin: 0 auto;
-         background-color: green;
-     }
-     
-     #arkeys{
-         
-     }
-     .coolink{
-         color: black;   
+    margin: 0 auto;
+    background-color: green;
+}
+
+#arkeys{
+
+}
+.coolink{
+    color: black;   
     text-decoration: none;
     font-size: 100px;
     text-align: center;
-     }
- 
-     
-     .snakez{
-         font-size: 150px;
-     }
-     
-     #gameOver{
-         position: absolute;
-         visibility: hidden;
-         text-align: center;
-         font-size: 75px;
-         margin: 0;
-         margin-left: 325px;
-        
-         width: 712px;
-         height: 362px;
-     }
-     
-     .title{
-         margin: 0;
-         text-align: center;
-         font-family: 'Indie Flower', cursive;
-     }
-     
-     #restartButton{
-         margin: 0;
-         padding-bottom: 0px;
-         border: 2px solid black;
-         background-color: dimgray;
-         border-radius: 10px;
-     }
-     
-     #restartButton:hover{
-         background-color: green;
-     }
-     
-     .car{
+}
+
+
+.snakez{
+    font-size: 150px;
+}
+
+#gameOver{
+    position: absolute;
+    visibility: hidden;
+    text-align: center;
+    font-size: 75px;
+    margin: 0;
+    margin-left: 180px;
+    margin-top: 60px;
+
+    width: 1000px;
+    height: 525px;
+}
+
+.title{
+    margin: 0;
+    text-align: center;
+    font-family: 'Indie Flower', cursive;
+}
+
+#restartButton{
+    margin: 0;
+    padding-bottom: 0px;
+    border: 2px solid black;
+    background-color: dimgray;
+    border-radius: 10px;
+}
+
+#restartButton:hover{
+    background-color: green;
+}
+
+.car{
     width: 550px;
     height: 250px;
     margin: 0 auto;
@@ -89,119 +95,218 @@ canvas{
 }
 
 #gameStart{
-         position: absolute;
-         visibility: hidden;
-         text-align: center;
-         font-size: 75px;
-         margin: 0;
-         margin-left: 325px;
-         margin-top: 10px;
-         border: solid;
-         background-color: red;
-         width: 712px;
-         height: 362px;
-     }
-     
-     #opScreen{
-         position: absolute;
-         visibility: hidden;
-         text-align: center;
-         font-size: 75px;
-         margin: 0;
-         margin-left: 325px;
-         margin-top: 10px;
-         border: solid;
-         background-color: red;
-         width: 712px;
-         height: 362px;
-     }
-     
-     #wtcontrol{
-         margin: 30px;
-         padding-bottom: 0px;
-         border: 2px solid black;
-         background-color: dimgray;
-         border-radius: 10px;
-     }
-     
-     #wtcontrol:hover{
-         background-color: green;
-     }
-     
-     #rezum{
-       margin: 30px;
-         padding: 0px;
-         border: 2px solid black;
-         background-color: dimgray;
-         border-radius: 10px;  
-     }
-     
-     #rezum:hover{
-         background-color: green;
-     }
-     
-     #ruls{
-         margin: 30px;
-         padding-bottom: 0px;
-         border: 2px solid black;
-         background-color: dimgray;
-         border-radius: 10px;
-     }
-     
-     #ruls:hover{
-         background-color: green;
-     }
-     
-     #easyButton{
-         margin: 0;
-         padding-bottom: 0px;
-         border: 2px solid black;
-         background-color: dimgray;
-         border-radius: 10px;
-     }
-     
-     #easyButton:hover{
-         background-color: green;
-     }
-     
-     #medButton{
-         margin: 0;
-         padding-bottom: 0px;
-         border: 2px solid black;
-         background-color: dimgray;
-         border-radius: 10px;
-     }
-     
-     #medButton:hover{
-         background-color: yellow;
-     }
-     
-     #hardButton{
-         margin: 0;
-         padding-bottom: 0px;
-         border: 2px solid black;
-         background-color: dimgray;
-         border-radius: 10px;
-     }
-     
-     #hardButton:hover{
-         background-color: red;
-     }
-     
-     #whocrs{
-         margin: 0;
-     }
-     
-     #playHUD{
-         position: absolute;
-         visibility: hidden;
-         padding-left: 290px;
-     }
-     
-     #gmscoreboard{
-         margin:0;
-     }
-     
+    position: absolute;
+    visibility: hidden;
+    text-align: center;
+    font-size: 75px;
+    margin: 0;
+    margin-left: 180px;
+    margin-top: 60px;
+    border: solid;
+    background-color: red;
+    width: 1000px;
+    height: 525px;
+}
+
+#controlstrt{
+    margin: 0;
+    padding-bottom: 0px;
+    border: 2px solid black;
+    background-color: dimgray;
+    border-radius: 10px;
+}
+
+#controlstrt:hover{
+    background-color: lightgray;
+}
+
+#rulestrt{
+    margin: 0;
+    padding-bottom: 0px;
+    border: 2px solid black;
+    background-color: dimgray;
+    border-radius: 10px;
+}
+
+
+#rulestrt:hover{
+    background-color: lightgray;
+}
+
+
+#rulScreen{
+    position: absolute;
+    visibility: hidden;
+    text-align: center;
+    font-size: 75px;
+    margin: 0;
+    margin-left: 180px;
+    margin-top: 60px;
+    border: solid;
+    background-color: red;
+    width: 1000px;
+    height: 525px;
+}
+
+.darules{
+    margin: 0px;
+    padding-bottom: 100px;
+     font-size: 35px;
+    font-style: oblique;
+}
+
+.darult{
+    margin: 0px;
+    padding-bottom: 50px;
+     font-size: 30px;
+    font-style: oblique;
+}
+
+#backop{
+    margin: 30px;
+    margin-top: 0px;
+    padding-top: 0px;
+    border: 2px solid black;
+    background-color: dimgray;
+    border-radius: 10px; 
+}
+
+#backop:hover{
+    background-color: green;
+}
+
+#conScreen{
+    position: absolute;
+    visibility: hidden;
+    text-align: center;
+    font-size: 75px;
+    margin: 0;
+    margin-left: 180px;
+    margin-top: 60px;
+    border: solid;
+    background-color: red;
+    width: 1000px;
+    height: 525px;
+}
+
+#backcon{
+    margin: 30px;
+    margin-top: 0px;
+    padding: 0px;
+    border: 2px solid black;
+    background-color: dimgray;
+    border-radius: 10px; 
+}
+
+#backcon:hover{
+    background-color: green;
+}
+
+#opScreen{
+    position: absolute;
+    visibility: hidden;
+    text-align: center;
+    font-size: 75px;
+    margin: 0;
+    margin-left: 180px;
+    margin-top: 60px;
+    border: solid;
+    background-color: red;
+    width: 1000px;
+    height: 525px;
+}
+
+#wtcontrol{
+    margin: 30px;
+    margin-bottom: 125px;
+    padding-bottom: 0px;
+    border: 2px solid black;
+    background-color: dimgray;
+    border-radius: 10px;
+}
+
+#wtcontrol:hover{
+    background-color: green;
+}
+
+#rezum{
+    margin: 30px;
+    margin-bottom: 0px;
+    padding: 0px;
+    border: 2px solid black;
+    background-color: dimgray;
+    border-radius: 10px;  
+}
+
+#rezum:hover{
+    background-color: green;
+}
+
+#ruls{
+    margin: 30px;
+    margin-bottom: 125px;
+    padding-bottom: 0px;
+    border: 2px solid black;
+    background-color: dimgray;
+    border-radius: 10px;
+}
+
+#ruls:hover{
+    background-color: green;
+}
+
+#easyButton{
+    margin: 0;
+    padding-bottom: 0px;
+    border: 2px solid black;
+    background-color: dimgray;
+    border-radius: 10px;
+}
+
+#easyButton:hover{
+    background-color: green;
+}
+
+#medButton{
+    margin: 0;
+    padding-bottom: 0px;
+    border: 2px solid black;
+    background-color: dimgray;
+    border-radius: 10px;
+}
+
+#medButton:hover{
+    background-color: yellow;
+}
+
+#hardButton{
+    margin: 0;
+    padding-bottom: 0px;
+    border: 2px solid black;
+    background-color: dimgray;
+    border-radius: 10px;
+}
+
+#hardButton:hover{
+    background-color: red;
+}
+
+#whocrs{
+    margin: 0;
+    font-family: 'Play', sans-serif;
+}
+
+#playHUD{
+    position: absolute;
+    visibility: hidden;
+    padding-left: 100px;
+    padding-top: 35px;
+}
+
+#gmscoreboard{
+    margin:0;
+}
+
 div {
     position: absolute;
     width: 300px;
