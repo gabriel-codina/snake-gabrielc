@@ -339,7 +339,7 @@ function keyboardHandler(event, snakeHeadX, snakeHeadY) {
         snakeDirection = "down";
     }
 
-    if (event.keyCode == "76") {
+    if (event.keyCode == "76" && play == "true") {
         var age = prompt("whats yor cheat code?");
 
         /*-----------------------------------------------------------------------------
@@ -347,7 +347,7 @@ function keyboardHandler(event, snakeHeadX, snakeHeadY) {
          * ----------------------------------------------------------------------------
          */
 
-        if (age == "snaklong") {
+        if (age == "snaklong" && play == "true") {
 
             var cheat = 25;
             for (var index = cheat - 1; index >= 0; index--) {
@@ -358,7 +358,7 @@ function keyboardHandler(event, snakeHeadX, snakeHeadY) {
             }
             snakeLength + 25;
         }
-        else if (age == "superlongsnak") {
+        else if (age == "superlongsnak" && play == "true") {
             var cheat1 = 100;
             for (var index = cheat1 - 1; index >= 0; index--) {
                 snake.push({
@@ -368,10 +368,10 @@ function keyboardHandler(event, snakeHeadX, snakeHeadY) {
             }
             snakeLength + 25;
         }
-        else if (age == "amazscore") {
+        else if (age == "amazscore" && play == "true") {
             snakeLength === 1000;
         }
-        else if (age == "annaconda") {
+        else if (age == "annaconda" && play == "true") {
             confirm("Annaconda mode unlocked");
             difficulty = "ann";
             clearInterval(myspeed);
