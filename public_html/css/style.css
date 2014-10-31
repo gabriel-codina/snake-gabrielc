@@ -26,27 +26,17 @@ canvas{
     margin-top: 0px;
     font-size: 200px;
 }
-
+/*Music*/
 .mus{
     margin: 0 auto;
     background-color: green;
 }
-
-#arkeys{
-
-}
+/*for moving link */
 .coolink{
     color: black;   
     text-decoration: none;
-    font-size: 100px;
-    text-align: center;
 }
-
-
-.snakez{
-    font-size: 150px;
-}
-
+/*Game over Screen */
 #gameOver{
     position: absolute;
     visibility: hidden;
@@ -59,13 +49,13 @@ canvas{
     width: 1000px;
     height: 525px;
 }
-
+/*Title for Snake */
 .title{
     margin: 0;
     text-align: center;
     font-family: 'Indie Flower', cursive;
 }
-
+/*Restart Button */
 #restartButton{
     margin: 0;
     padding-bottom: 0px;
@@ -77,23 +67,7 @@ canvas{
 #restartButton:hover{
     background-color: green;
 }
-
-.car{
-    width: 550px;
-    height: 250px;
-    margin: 0 auto;
-}
-
-.colorcar{
-    background-color: green;
-    width: 600px;
-    height: 300px;
-}
-
-.homesnake{
-    background-color: green;
-}
-
+/*Start Screen */
 #gameStart{
     position: absolute;
     visibility: hidden;
@@ -107,7 +81,7 @@ canvas{
     width: 1000px;
     height: 525px;
 }
-
+/*Controls button for start screen */
 #controlstrt{
     margin: 0;
     padding-bottom: 0px;
@@ -119,7 +93,7 @@ canvas{
 #controlstrt:hover{
     background-color: lightgray;
 }
-
+/*Rules button for start screen */
 #rulestrt{
     margin: 0;
     padding-bottom: 0px;
@@ -132,7 +106,7 @@ canvas{
 #rulestrt:hover{
     background-color: lightgray;
 }
-
+/*Screen for Rules */
 
 #rulScreen{
     position: absolute;
@@ -147,21 +121,21 @@ canvas{
     width: 1000px;
     height: 525px;
 }
-
+/*Style for rules */
 .darules{
     margin: 0px;
     padding-bottom: 100px;
      font-size: 35px;
     font-style: oblique;
 }
-
+/*Styles for Controls */
 .darult{
     margin: 0px;
     padding-bottom: 50px;
      font-size: 30px;
     font-style: oblique;
 }
-
+/*Back button from rules screen */
 #backop{
     margin: 30px;
     margin-top: 0px;
@@ -174,7 +148,7 @@ canvas{
 #backop:hover{
     background-color: green;
 }
-
+/*Control screen */
 #conScreen{
     position: absolute;
     visibility: hidden;
@@ -188,7 +162,7 @@ canvas{
     width: 1000px;
     height: 525px;
 }
-
+/*Back button from controls screen */
 #backcon{
     margin: 30px;
     margin-top: 0px;
@@ -201,7 +175,7 @@ canvas{
 #backcon:hover{
     background-color: green;
 }
-
+/*Options Screen */
 #opScreen{
     position: absolute;
     visibility: hidden;
@@ -215,7 +189,7 @@ canvas{
     width: 1000px;
     height: 525px;
 }
-
+/*Controls button */
 #wtcontrol{
     margin: 30px;
     margin-bottom: 125px;
