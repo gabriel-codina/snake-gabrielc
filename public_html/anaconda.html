@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>Gabriel Codina - Snake</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" type="text/css" href="css/style.css">
+        <link href='http://fonts.googleapis.com/css?family=Play' rel='stylesheet' type='text/css'>
+    </head>
+    <body class="body">
+
+        <!--scoreboard-->
+        <section id='playHUD'>
+            <h2 id='scoreboard'></h2>
+        </section>
+        <!--game Over screen-->
+        <section id="gameOver">
+            <h1 class="title">GAME OVER!</h1>
+            <h3 id="restartButton">Restart?</h3>
+            <h3 id='gmscoreboard'></h3>
+        </section>
+        <!--start screen-->
+        <section id="gameStart">
+            <h1 id="whocrs">Snake</h1>
+            <h5 id="easyButton">Worm</h5>
+            <h5 id="medButton">Snake</h5>
+            <h5 id="hardButton">Python</h5>
+            <h5 id='controlstrt'>controls</h5>
+            <h5 id='rulestrt'>rules</h5>
+        </section>
+        <!--Options Screen-->
+        <section id="opScreen">
+            <h5 id='wtcontrol'>controls</h5>
+            <h5 id='ruls'>rules</h5>
+            <h5 id='rezum'>resume</h5>
+        </section>
+        <!--rules screen-->
+        <section id="rulScreen">
+            <p class='darules'>1. Don't touch the walls.</p>
+            <p class='darules'>2. Don't hit your own Snake.</p>
+            <p class='darules'>3. Get as much food as you can.</p>
+            <h5 id='backop'>Back</h5>
+        </section>
+        <!--Controls screen-->
+        <section id="conScreen">
+            <p class='darult'>p = pause</p>
+            <p class='darult'>l = Cheats</p>
+            <p class='darult'>right arrow key = right</p>
+            <p class='darult'>left arrow key = left</p>
+            <p class='darult'>down arrow key = down</p>
+            <p class='darult'>up arrow key = up</p>
+            <h5 id='backcon'>Back</h5>
+        </section>
+        <!--canvas to draw on-->
+        <canvas id="an-screen"></canvas>
+        <!--links js screen-->
+        <script src="js/anaconda.js"></script>
+        <!--moving text at bottom-->
+    <marquee direction="right">This Website was created by <a class="coolink" href="http://localhost:8383/codinag-prortfolio-v2/index.html">Gabriel-Codina</a></marquee>
+    <!--music-->
+    <embed 
+        class="mus"
+        src="Nicki_Minaj_--_Anaconda_(CleanLyrics).mp3"
+        width="0"
+        height="0"
+        loop="false"
+        autostart="true" />
+
+</body>
+
+</html>

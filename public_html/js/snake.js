@@ -47,8 +47,8 @@ function gameInitialize() {
     var canvas = document.getElementById("game-screen");
     context = canvas.getContext("2d");
 
-    screenWidth = window.innerWidth;
-    screenHeight = window.innerHeight;
+    screenWidth = window.innerWidth - 200;
+    screenHeight = window.innerHeight - 100;
 
     canvas.width = screenWidth;
     canvas.height = screenHeight;
@@ -104,6 +104,10 @@ function gameLoop() {
  * ----------------------------------------------------------------------------
  */
 function gameDraw() {
+    context.clearRect(0, 0, screenWidth, screenHeight);
+    context.restore();
+    context.clearRect(0, 0, screenWidth, screenHeight);
+    context.restore();
     context.fillStyle = "rgb(26,46,145)";
     context.fillRect(0, 0, screenWidth, screenHeight);
 
@@ -242,9 +246,9 @@ function rulestart() {
 function snakeInitialize() {
     snake = [];
     snakeLength = 3;
-    snakeSize = 30;
+    snakeSize = screenWidth / 40;
     snakeDirection = "down";
-    foodSize = 30;
+    foodSize = screenWidth / 40;
 
     for (var index = snakeLength - 1; index >= 0; index--) {
         snake.push({
@@ -261,7 +265,10 @@ function snakeDraw() {
     for (var index = 0; index < snake.length; index++) {
         context.fillStyle = "black";
         context.fillRect(snake[index].x * snakeSize, snake[index].y * snakeSize, snakeSize, snakeSize);
-
+        context.strokeStyle = "white";
+        context.strokeRect(snake[index].x * snakeSize, snake[index].y * snakeSize, snakeSize, snakeSize);
+       
+        
     }
 }
 function snakeUpdate() {
@@ -371,7 +378,7 @@ function keyboardHandler(event, snakeHeadX, snakeHeadY) {
         else if (age == "amazscore" && play == "true") {
             snakeLength === 1000;
         }
-        else if (age == "annaconda" && play == "true") {
+        else if (age == "anaconda" && play == "true") {
             confirm("Annaconda mode unlocked");
             difficulty = "ann";
             clearInterval(myspeed);
@@ -379,7 +386,8 @@ function keyboardHandler(event, snakeHeadX, snakeHeadY) {
             clearInterval(slow);
             clearInterval(med);
             clearInterval(annocanda);
-            annocanda = setInterval(gameLoop, 10);
+            annocanda = setInterval(gameLoop, 1000);
+            location.href = 'anaconda.html';
         }
         else {
             confirm("Code is invalid");
