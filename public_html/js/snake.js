@@ -28,7 +28,17 @@ var play;
 var da;
 var annocanda;
 var Score;
-
+var W;
+var A;
+var S;
+var D;
+var Right = "39";
+var Left = "37";
+var Up = "38";
+var Down = "40";
+var colorback = "rgb(26,46,145)";
+var snakecolor = "black";
+var foodcolor = "red";
 /*-----------------------------------------------------------------------------
  * Function Callers- tell functions to activate.
  * ----------------------------------------------------------------------------
@@ -43,7 +53,10 @@ var myspeed = setInterval(gameLoop, 35);
  */
 
 function gameInitialize() {
-
+W = "up";
+A = "left";
+S = "down";
+D = "right";
     var canvas = document.getElementById("game-screen");
     context = canvas.getContext("2d");
 
@@ -76,6 +89,10 @@ function gameInitialize() {
     backcon.addEventListener("click", backcont);
     controlstrt.addEventListener("click", controlstart);
     rulestrt.addEventListener("click", rulestart);
+    rit.addEventListener("click", right);
+    lef.addEventListener("click", left);
+    dow.addEventListener("click", down);
+    up.addEventListener("click", u);
 
     playHUD = document.getElementById("playHUD");
     scoreboard = document.getElementById("scoreboard");
@@ -108,7 +125,7 @@ function gameDraw() {
     context.restore();
     context.clearRect(0, 0, screenWidth, screenHeight);
     context.restore();
-    context.fillStyle = "rgb(26,46,145)";
+    context.fillStyle = colorback;
     context.fillRect(0, 0, screenWidth, screenHeight);
 
 
@@ -239,6 +256,71 @@ function rulestart() {
     displayMenu(rulScreen);
     da = "yes";
 }
+
+function right(here) {
+    console.log(here);
+    
+    if(D == "right"){
+        Right = "68";
+        D = "D";
+        console.log(D);
+    rit.innerHTML = "< D"
+}
+else{
+    Right = "39";
+        D = "right";
+    rit.innerHTML = "right arrow key >";
+    console.log("else");
+    }
+
+}
+
+function left() {
+    if(A == "left") {
+        Left = "65";
+        A = "A";
+    lef.innerHTML = "< A";
+}
+
+else{
+    Left = "37";
+        A = "left";
+    lef.innerHTML = "left arrow key >";
+}
+}
+
+function down() {
+    if(S == "down"){
+      Down="83";  
+        S = "S";
+    dow.innerHTML = "< S";
+}
+
+else{
+    Down ="40";
+        S = "down";
+    dow.innerHTML = "down arrow key >";
+}
+
+}
+
+function u() {
+    if(W == "up"){
+        Up = "87";
+        W = "W";
+    up.innerHTML = "< W";
+}
+ else{
+     Up = "38";
+        W = "up";
+    up.innerHTML = "up arrow key >";
+    
+}
+
+
+}
+
+
 /*-----------------------------------------------------------------------------
  * snake Functions
  * ----------------------------------------------------------------------------
@@ -263,7 +345,7 @@ function snakeInitialize() {
 
 function snakeDraw() {
     for (var index = 0; index < snake.length; index++) {
-        context.fillStyle = "black";
+        context.fillStyle = snakecolor;
         context.fillRect(snake[index].x * snakeSize, snake[index].y * snakeSize, snakeSize, snakeSize);
         context.strokeStyle = "white";
         context.strokeRect(snake[index].x * snakeSize, snake[index].y * snakeSize, snakeSize, snakeSize);
@@ -313,7 +395,7 @@ function foodInitialize() {
 }
 
 function foodDraw() {
-    context.fillStyle = "red";
+    context.fillStyle = foodcolor;
     context.fillRect(food.x * snakeSize, food.y * snakeSize, foodSize, foodSize);
 }
 
@@ -332,17 +414,17 @@ function setFoodPosition() {
 
 function keyboardHandler(event, snakeHeadX, snakeHeadY) {
 
-
-    if (event.keyCode == "39" && snakeDirection != "left") {
+console.log(event);
+    if (event.keyCode == Right && snakeDirection != "left") {
         snakeDirection = "right";
     }
-    else if (event.keyCode == "37" && snakeDirection != "right") {
+    else if (event.keyCode == Left && snakeDirection != "right") {
         snakeDirection = "left";
     }
-    else if (event.keyCode == "38" && snakeDirection != "down") {
+    else if (event.keyCode == Up && snakeDirection != "down") {
         snakeDirection = "up";
     }
-    else if (event.keyCode == "40" && snakeDirection != "up") {
+    else if (event.keyCode == Down && snakeDirection != "up") {
         snakeDirection = "down";
     }
 
@@ -377,6 +459,8 @@ function keyboardHandler(event, snakeHeadX, snakeHeadY) {
         }
         else if (age == "amazscore" && play == "true") {
             snakeLength === 1000;
+            Score === "Score: 1000";
+            
         }
         else if (age == "anaconda" && play == "true") {
             confirm("Annaconda mode unlocked");
@@ -396,6 +480,41 @@ function keyboardHandler(event, snakeHeadX, snakeHeadY) {
 
 
 
+    }
+    
+    if (event.keyCode == "49") {
+        var back = prompt("What color whould you like your background to be?");
+        
+        if (back == "black" || "blue" || "orange" || "red" || "grey" || "purple" || "choclate" || "pink" || "yellow" || "magenta" || "green" || "violet"){
+            colorback = back;
+        }
+        else{
+            confirm("color is invalid.");
+        }
+    }
+        
+        
+        if (event.keyCode == "50") {
+        var snakeccolor = prompt("What color whould you like your snake to be?");
+        
+        if (back == "black" || "blue" || "orange" || "red" || "grey" || "purple" || "choclate" || "pink" || "yellow" || "magenta" || "green" || "violet"){
+            snakecolor = snakeccolor;
+        }
+        else{
+            confirm("color is invalid.");
+        }
+    }
+        
+        
+        if (event.keyCode == "51") {
+        var colorfood = prompt("What color whould you like your food to be?");
+        
+        if (back == "black" || "blue" || "orange" || "red" || "grey" || "purple" || "choclate" || "pink" || "yellow" || "magenta" || "green" || "violet"){
+            foodcolor = colorfood;
+        }
+        else{
+            confirm("color is invalid.");
+        }
     }
     /*-----------------------------------------------------------------------------
      * Pause Screen
@@ -514,6 +633,7 @@ function centerMenuPosition(menu) {
  */
 
 function drawScoreboard() {
+    console.log(snakeLength);
     Score = "Score:" + (snakeLength * 10 - 30);
     scoreboard.innerHTML = Score;
 }

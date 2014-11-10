@@ -81,7 +81,7 @@ p{
     border: solid;
     background-color: red;
     width: 1000px;
-    height: 500px;
+    height: 530px;
 }
 /*Controls button for start screen */
 #controlstrt{
@@ -133,7 +133,7 @@ p{
 /*Styles for Controls */
 .darult{
     margin: 0px;
-    padding-bottom: 40px;
+    padding-bottom: 15px;
      font-size: 30px;
     font-style: oblique;
 }
@@ -292,7 +292,7 @@ p{
     -webkit-animation-name: myfirst;
     -webkit-animation-duration: 3s;
     -webkit-animation-timing-function: linear;
-    -webkit-animation-delay: 1s;
+    -webkit-animation-delay: 0s;
     -webkit-animation-iteration-count: infinite;
     -webkit-animation-direction: alternate;
     -webkit-animation-play-state: running;
@@ -303,4 +303,40 @@ p{
     0% {background: green;}
     50%{background: red;}
     100% {background: blue;}
+}
+
+#rit{
+    
+}
+
+#rit:hover{
+    border: 2px solid black;
+    border-radius: 10px;
+}
+
+#lef{
+    
+}
+
+#lef:hover{
+   border: 2px solid black;
+    border-radius: 10px; 
+}
+
+#dow{
+    
+}
+
+#dow:hover{
+    border: 2px solid black;
+    border-radius: 10px;
+}
+
+#up{
+    
+}
+
+#up:hover{
+    border: 2px solid black;
+    border-radius: 10px;
 }
